@@ -1,0 +1,25 @@
+An example repo to showcase the Azure Storage SDK components and how to test them with TestContainers and Azurite.
+
+The 2 main important classes are:
+
+- *AzureStorageContainer*: A custom GenericContainer implementation of the Testcontainer framework, used to start and stop the Azurite Docker container.
+- *AzureStorageTest*: A test class which showcases the use of both the Azure SDK for storage and how to hook it up with the AzureStorageContainer for Testcontainers.
+
+Note: this repo just showcases the use of the following technologies and is not a "how to" for either of them.
+Some more information can be found on the links below.
+
+## Azurite
+
+The Azurite open-source emulator provides a free local environment for testing your Azure Blob, Queue Storage, and Table Storage applications.
+
+- Source: https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite
+
+## Testcontainers
+
+Testcontainers is a testing library that provides easy and lightweight APIs for bootstrapping integration tests with real services wrapped in Docker containers.
+Using Testcontainers, you can write tests talking to the same type of services you use in production without mocks or in-memory services.
+
+* Source: https://testcontainers.com/guides/introducing-testcontainers/#_what_is_testcontainers
+* Additional links:
+** JUnit 5 Quickstart: https://java.testcontainers.org/quickstart/junit_5_quickstart/
+** Reuse of testcontainers for faster testing: https://rieckpil.de/reuse-containers-with-testcontainers-for-fast-integration-tests/

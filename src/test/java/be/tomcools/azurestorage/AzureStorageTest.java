@@ -28,7 +28,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 @Testcontainers
-class AzureStorageTestContainersTest {
+class AzureStorageTest {
 
     @Container // static field so the container is reused within the test set.
     private static final AzureStorageContainer AZURE_STORAGE_CONTAINER = new AzureStorageContainer();

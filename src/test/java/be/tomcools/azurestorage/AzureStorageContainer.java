@@ -1,10 +1,14 @@
 package be.tomcools.azurestorage;
 
-import com.azure.storage.common.StorageSharedKeyCredential;
 import org.testcontainers.containers.GenericContainer;
 
+/**
+ * Testcontainer GenericContainer class which will be responsible for starting and stopping the Azurite docker container.
+ * It by default enables Blob, Queue and Table storage systems and exposes them on their default ports.
+ */
 public class AzureStorageContainer extends GenericContainer<AzureStorageContainer> {
 
+    // Port defaults here are documented on Github: https://github.com/Azure/Azurite?tab=readme-ov-file#run-azurite-v3-docker-image
     public static final int DEFAULT_BLOB_PORT = 10000;
     public static final int DEFAULT_QUEUE_PORT = 10001;
     public static final int DEFAULT_TABLE_PORT = 10002;
@@ -49,10 +53,6 @@ public class AzureStorageContainer extends GenericContainer<AzureStorageContaine
                 "/" +
                 accountName +
                 ";";
-    }
-
-    public StorageSharedKeyCredential getCredentials() {
-        return new StorageSharedKeyCredential(accountName, accountKey);
     }
 
     public AzureStorageContainer withAccountName(String accountName) {
